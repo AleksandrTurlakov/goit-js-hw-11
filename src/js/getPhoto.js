@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-const BASE_URL = `https://pixabay.com/pi/`;
+const BASE_URL = `https://pixabay.com/api/`;
 const KEY = `30771927-0f20ce8e9e9263a99f3dfe8b1`;
 const IMAGE_TYPE = `photo`;
 const ORIENTATITON = `"horizontal"`;
@@ -14,6 +15,6 @@ export async function getPhoto(photoName, page = 1) {
     );
     return response.data;
   } catch (error) {
-    console.error(Notify.failure('${error}'));
+    Notify.failure('Error', error);
   }
 }

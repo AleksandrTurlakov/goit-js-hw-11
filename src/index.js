@@ -10,14 +10,10 @@ let galleryNew = new SimpleLightbox('.gallery a', {
 });
 
 const searchForm = document.querySelector('.search-form');
-console.log(searchForm);
 const gallery = document.querySelector('.gallery');
 const loadMore = document.querySelector('.load-more');
-console.log(loadMore);
 loadMore.setAttribute('hidden', true);
 let page = 1;
-
-console.log(gallery);
 
 searchForm.addEventListener('submit', searchPhoto);
 
@@ -26,7 +22,6 @@ function searchPhoto(evt) {
   gallery.innerHTML = '';
   const { searchQuery } = evt.currentTarget.elements;
   const photoName = searchQuery.value.trim();
-  console.log(photoName);
   getPhoto(photoName).then(data => {
     gallery.insertAdjacentHTML('beforeend', markup(data.hits));
     galleryNew.refresh();
@@ -58,8 +53,6 @@ loadMore.addEventListener('click', onLoad);
 
 function onLoad() {
   page += 1;
-  //   const photoName = searchForm.searchQuery.value.trim();
-  console.log(searchForm.searchQuery.value.trim());
   getPhoto(searchForm.searchQuery.value.trim(), page).then(data => {
     gallery.insertAdjacentHTML('beforeend', markup(data.hits));
     galleryNew.refresh();

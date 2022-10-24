@@ -1,1 +1,0 @@
-{"mappings":"YAAA,IAAMA,EAAaC,SAASC,cAAc,gBAC1CC,QAAQC,IAAIJ,GAEZG,QAAQC,IAAI,c","sources":["src/index.js"],"sourcesContent":["const searchForm = document.querySelector('.search-form');\nconsole.log(searchForm);\n\nconsole.log('Hello world');\n"],"names":["$b8f9b7833fa37166$var$searchForm","document","querySelector","console","log"],"version":3,"file":"index.e6ca46e5.js.map"}
